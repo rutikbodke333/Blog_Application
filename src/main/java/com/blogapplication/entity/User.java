@@ -5,9 +5,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -36,7 +34,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@Column(name = "user_name", nullable = false, length = 100)
+	@Column(name = "user_name")
 	private String name;
 
 	private String email;
@@ -45,22 +43,12 @@ public class User {
 
 	private String about;
 	
-	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Post> post = new ArrayList<>();
 	
-//	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//	@JoinTable(name = "user_role",
-//	joinColumns = @JoinColumn (name = "user", referencedColumnName = "id"),
-//	inverseJoinColumns = @JoinColumn(name = "role", referencedColumnName = "id"))
-//	private List<Role> roles = new ArrayList<>();
-//	Third table user_role is created to establish many-to-many relationship between User and Role entities.
-//	Alice becomes an ADMIN and a USER, so there are two entries in the user_role table for Alice.
-//	+--------+--------+
-//	| user   | role   |
-//	+--------+--------+
-//	|   1    |   1    |  --> Alice is ADMIN
-//	|   1    |   2    |  --> Alice is USER
-//	+--------+--------
+	private String role;
+	
+    
 	
 
 }
