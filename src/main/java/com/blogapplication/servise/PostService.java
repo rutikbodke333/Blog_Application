@@ -14,21 +14,24 @@ import com.blogapplication.payload.PostResponse;
 @Service
 public interface PostService {
 
-	PostDto upsertPost(PostDto postDto, Integer userId, Integer categoryId);
+	PostDto createPost(PostDto postDto, Long userId, Long categoryId);
 
-//	Post updatePost(PostDto postDto, Integer postId);
 
-	void deletePost(Integer postId);
+	PostDto updatePost(PostDto postDto, Long postId);
+	
+	
+
+	void deletePost(Long postId);
 
 	PostResponse getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDir);
 
-	PostDto getPostById(Integer postId);
+	PostDto getPostById(Long postId);
 
 //    get all post by category
-	List<PostDto> getPostByCategory(Integer categoryId);
+	List<PostDto> getPostByCategory(Long categoryId);
 
 //    get all post by user
-	List<PostDto> getPostByUser(Integer userId);
+	List<PostDto> getPostByUser(Long userId);
 
 	// search post by title
 	List<PostDto> searchPosts(String keyword);

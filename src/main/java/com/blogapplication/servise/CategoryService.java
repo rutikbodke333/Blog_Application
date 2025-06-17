@@ -9,12 +9,14 @@ import com.blogapplication.payload.CategoryDto;
 @Service
 public interface CategoryService {
 	
-	CategoryDto upsertCategory(CategoryDto categoryDto);
+	CategoryDto createCategory(CategoryDto categoryDto);
+	
+	CategoryDto updateCategory(CategoryDto categoryDto, Long categoryId);
 	
 	List<CategoryDto> getAllCategory();
 	
-	CategoryDto getCategorybyId(Integer id);
+	CategoryDto getCategorybyId(Long categoryId);
 	
-	void deleteById(Integer id);
+	void deleteById(Long categoryId);
 
 }

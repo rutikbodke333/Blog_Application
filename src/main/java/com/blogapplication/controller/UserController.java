@@ -5,71 +5,62 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import com.blogapplication.entity.PaginationResponce;
 import com.blogapplication.payload.UserDto;
-import com.blogapplication.repository.UserRepo;
+import com.blogapplication.repository.UserRepository;
 import com.blogapplication.servise.UserService;
 
 import jakarta.validation.Valid;
 
 @RestController
+@RequestMapping("/blogapplication") 
 public class UserController {
 
-    private final UserRepo userRepo;
+	@Autowired
+	private UserRepository userRepository;
 
 	@Autowired
 	private UserService userService;
 
-    UserController(UserRepo userRepo) {
-        this.userRepo = userRepo;
-    }
-
-	@PostMapping("/user")
+	@PostMapping("/admin/users")
 	public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto) {
-
-		UserDto createUser = userService.upsertUser(userDto);
-
-		return new ResponseEntity<UserDto>(createUser, HttpStatus.CREATED);
-
+		UserDto createdUser = userService.createUser(userDto);
+		return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
 	}
 
-	@GetMapping("/user/{id}")
-	public ResponseEntity<UserDto> getUserById(@PathVariable Integer id) {
-		
-		UserDto userById = userService.getUserById(id);
-		
-		return new ResponseEntity<UserDto>(userById, HttpStatus.OK);
+	@PutMapping("/user/{userId}")
+	public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto, @PathVariable Long userId) {
+		UserDto updateUser = userService.updateUser(userDto, userId);
+		return new ResponseEntity<>(updateUser, HttpStatus.OK);
 	}
+
 	
-	@GetMapping("/user")
-	public ResponseEntity<List<UserDto>> getAllUser(){
-		List<UserDto> allUser = userService.getAllUser();
-		
-		return new ResponseEntity<List<UserDto>>(allUser, HttpStatus.OK);
+
+	@GetMapping("/user/{userId}")
+	public ResponseEntity<UserDto> getUserById(@PathVariable Long userId) {
+		UserDto userById = userService.getUserById(userId);
+		return new ResponseEntity<>(userById, HttpStatus.OK);
 	}
-	
-	@PutMapping("user")
-	public ResponseEntity<UserDto> updatedUser(@RequestBody UserDto userDto) {
 
-		UserDto updatedUser = userService.upsertUser(userDto);
-
-		return new ResponseEntity<UserDto>(updatedUser, HttpStatus.CREATED);
-
-	}
-	
-	@DeleteMapping("/user/{id}")
-	public ResponseEntity<String> deleteById(@PathVariable Integer id)
-	{
-		userService.deleteUser(id);
-		return new ResponseEntity<String>("user deleted", HttpStatus.OK);
+	@GetMapping("/user/allUsers")
+	public ResponseEntity<PaginationResponce> getAllUsers(@RequestParam(defaultValue = "0") Integer pageNumber,
+			@RequestParam(defaultValue = "15") Integer pageSize, @RequestParam(defaultValue = "name") String sortBy,
+			@RequestParam(defaultValue = "asc") String sortDir) {
+		PaginationResponce paginationResponse = userService.getAllUsers(pageNumber, pageSize, sortBy, sortDir);
+		return new ResponseEntity<>(paginationResponse, HttpStatus.OK);
 	}
 
 
+	@DeleteMapping("/user/{userId}")
+	public ResponseEntity<String> deleteById(@PathVariable Long userId) {
+		userService.deleteUser(userId);
+		return new ResponseEntity<>("User deleted successfully", HttpStatus.OK);
+	}
+
+	@GetMapping("/welcome")
+	public String welcome() {
+		return "Welcome to the Blog Application!";
+	}
 }

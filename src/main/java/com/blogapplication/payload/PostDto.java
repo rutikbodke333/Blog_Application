@@ -20,10 +20,10 @@ import lombok.Setter;
 
 public class PostDto {
 
-	private Integer postId;
+	private Long postId;
 
 	@NotBlank(message = "title cannot be blank")
-	@Size(min = 4, max = 50, message = "title must be between 4 and 100 characters")
+	@Size(min = 4, max = 50, message = "title must be between 4 and 50 characters")
 	private String title;
 
 	@NotBlank(message = "content cannot be blank")

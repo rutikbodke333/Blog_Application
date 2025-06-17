@@ -4,18 +4,23 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.blogapplication.entity.PaginationResponce;
 import com.blogapplication.payload.UserDto;
 
 @Service
 public interface UserService {
 	
-	UserDto upsertUser(UserDto userDto);
+	UserDto createUser(UserDto userDto);
 	
-	UserDto getUserById(Integer id);
+	UserDto updateUser(UserDto userDto, Long adminId);
 	
-	List<UserDto> getAllUser();
+	UserDto getUserById(Long userId);
 	
-	void deleteUser(Integer id);
+	PaginationResponce getAllUsers(Integer pageNumber, Integer pageSize, String sortBy, String sortDir);
+	
+	void deleteUser(Long userId);
+	
+	public UserDto registerUser(UserDto userDto);
 	
 	
 	

@@ -9,8 +9,10 @@ import com.blogapplication.entity.User;
 
 
 @Repository
-public interface UserRepo   extends JpaRepository<User, Integer> {
+public interface UserRepository   extends JpaRepository<User, Long> {
 
-	Optional<User> findByEmail(String email);
+	boolean existsByEmail(String email);
+
+	User findByEmail(String email); // returns null if user not found
 
 }

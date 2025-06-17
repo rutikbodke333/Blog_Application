@@ -1,4 +1,4 @@
-package com.blogapplication.config;
+package com.blogapplication.payload;
 
 public class AppConstant {
 	

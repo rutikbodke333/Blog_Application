@@ -12,10 +12,10 @@ import lombok.NoArgsConstructor;
 public class UserDto {
 //	This annotation are used for validity means user can't write empty value in names or others fields
 
-	private int id;
+	private Long id;
 
 	@NotBlank(message = "Name must be not blank")
-	@Size(min = 4, max = 20, message = "name must have min 4 character and mix 10 character")
+	@Size(min = 4, max = 20, message = "name must have min 4 character and mix 20 character")
 	private String name;
 
 	@NotBlank(message = "Email must be not blank")
@@ -27,10 +27,8 @@ public class UserDto {
 	@Size(min = 6, max = 20, message = "Password must have min 6 characters and max 20 characters")
 	private String password;
 
-	@NotBlank(message = "About must be not blank")
-	@Size(min = 4, max = 20, message = "name must have min 4 character and mix 20 character")
-	private String about;
 
-	private String role;
+
+	private String role; // ROLE_USER, ROLE_ADMIN
 
 }

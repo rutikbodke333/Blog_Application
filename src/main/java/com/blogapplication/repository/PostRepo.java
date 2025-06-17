@@ -9,7 +9,7 @@ import com.blogapplication.entity.Post;
 import com.blogapplication.entity.User;
 import com.blogapplication.payload.PostDto;
 
-public interface PostRepo  extends JpaRepository<Post, Integer>{
+public interface PostRepo  extends JpaRepository<Post, Long>{
 	
 	List<Post> findAllByUser(User user);
 	

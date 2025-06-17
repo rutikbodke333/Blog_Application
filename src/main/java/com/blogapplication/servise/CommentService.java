@@ -7,9 +7,11 @@ import com.blogapplication.payload.CommentDto;
 @Service
 
 public interface CommentService {
-	
-	CommentDto upsertComment(CommentDto commentDto, Integer postId);
-	
-	void deleteComment(Integer commentId);
+
+	CommentDto createComment(CommentDto commentDto, Long postId);
+
+	CommentDto updateComment(CommentDto commentDto, Long commentId);
+
+	void deleteComment(Long commentId);
 
 }

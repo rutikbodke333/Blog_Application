@@ -15,13 +15,12 @@ import org.springframework.stereotype.Service;
 import com.blogapplication.entity.Category;
 import com.blogapplication.entity.Post;
 import com.blogapplication.entity.User;
-import com.blogapplication.exception.CategoryNotFoundException;
-import com.blogapplication.exception.UserNotFoundException;
+
 import com.blogapplication.payload.PostDto;
 import com.blogapplication.payload.PostResponse;
 import com.blogapplication.repository.CategoryRepo;
 import com.blogapplication.repository.PostRepo;
-import com.blogapplication.repository.UserRepo;
+import com.blogapplication.repository.UserRepository;
 
 @Service
 public class PostServiceImple implements PostService {
@@ -36,18 +35,18 @@ public class PostServiceImple implements PostService {
 	private CategoryRepo categoryRepo;
 
 	@Autowired
-	private UserRepo userRepo;
+	private UserRepository userRepository;
 
-//	Method 1 : create or update post
 	@Override
-	public PostDto upsertPost(PostDto postDto, Integer userId, Integer categoryId) {
+	public PostDto createPost(PostDto postDto, Long userId, Long categoryId) {
 
 //		fetching userId from the database
-		User user = this.userRepo.findById(userId).orElseThrow(() -> new UserNotFoundException("User id not exist"));
+		User user = this.userRepository.findById(userId)
+				.orElseThrow(() -> new RuntimeException("User id is not exist"));
 
-//		fetching categoryId from the database
+//		fetching categoryId from the databases
 		Category cat = this.categoryRepo.findById(categoryId)
-				.orElseThrow(() -> new CategoryNotFoundException("Category id is not exist"));
+				.orElseThrow(() -> new RuntimeException("Category id is not exist"));
 
 		Post post = this.modelMapper.map(postDto, Post.class);
 
@@ -69,13 +68,28 @@ public class PostServiceImple implements PostService {
 		return this.modelMapper.map(savedPost, PostDto.class);
 	}
 
+	@Override
+	public PostDto updatePost(PostDto postDto, Long postId) {
+		Post post = this.postRespo.findById(postId)
+				.orElseThrow(() -> new RuntimeException("Post id is not exist"));
+
+		post.setTitle(postDto.getTitle());
+		post.setContent(postDto.getContent());
+		post.setImageName(postDto.getImageName());
+		post.setAddedDate(new Date());
+		
+		Post updatedPost = this.postRespo.save(post);
+
+		return this.modelMapper.map(updatedPost, PostDto.class);
+	}
+
 //	fetch the posts based on categoryId
 	@Override
 	// internally it use foreign key for fetch the posts based on categoryId
-	public List<PostDto> getPostByCategory(Integer categoryId) {
+	public List<PostDto> getPostByCategory(Long categoryId) {
 		// Step 1: Fetch the category by ID
 		Category cat = this.categoryRepo.findById(categoryId)
-				.orElseThrow(() -> new CategoryNotFoundException("Category id is not exist"));
+				.orElseThrow(() -> new RuntimeException("Category id is not exist"));
 
 		// Step 2: Get all posts that belong to this category
 		List<Post> posts = this.postRespo.findByCategory(cat); // SELECT * FROM post WHERE category_id = 1;
@@ -90,9 +104,10 @@ public class PostServiceImple implements PostService {
 
 //    fetch the posts based on userId
 	@Override
-	public List<PostDto> getPostByUser(Integer userId) {
+	public List<PostDto> getPostByUser(Long userId) {
 
-		User user = this.userRepo.findById(userId).orElseThrow(() -> new UserNotFoundException("User id is not exist"));
+		User user = this.userRepository.findById(userId)
+				.orElseThrow(() -> new RuntimeException("User id is not exist"));
 
 		List<Post> posts = this.postRespo.findAllByUser(user); // SELECT * FROM post WHERE user_id = 1;
 
@@ -147,18 +162,18 @@ public class PostServiceImple implements PostService {
 	}
 
 	@Override
-	public PostDto getPostById(Integer postId) {
+	public PostDto getPostById(Long postId) {
 		Post post = this.postRespo.findById(postId)
-				.orElseThrow(() -> new UserNotFoundException("Post id is not exist"));
+				.orElseThrow(() -> new RuntimeException("Post id is not exist"));
 
 		return this.modelMapper.map(post, PostDto.class);
 
 	}
 
 	@Override
-	public void deletePost(Integer postId) {
+	public void deletePost(Long postId) {
 		Post post = this.postRespo.findById(postId)
-				.orElseThrow(() -> new UserNotFoundException("Post id is not exist"));
+				.orElseThrow(() -> new RuntimeException("Post id is not exist"));
 
 		this.postRespo.delete(post);
 

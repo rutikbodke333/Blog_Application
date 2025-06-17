@@ -6,26 +6,36 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.blogapplication.payload.CommentDto;
 import com.blogapplication.servise.CommentService;
 
 @RestController
+@RequestMapping("/blogapplication/user") // Base path for the controller
 public class CommentController {
 
 	@Autowired
 	private CommentService commentService;
 
 	@PostMapping("posts/{postId}/comments")
-	public ResponseEntity<CommentDto> createComment(@RequestBody CommentDto commentDto, @PathVariable Integer postId) {
-		CommentDto createdComment = this.commentService.upsertComment(commentDto, postId);
+	public ResponseEntity<CommentDto> createComment(@RequestBody CommentDto commentDto, @PathVariable Long postId) {
+		CommentDto createdComment = this.commentService.createComment(commentDto, postId);
 		return new ResponseEntity<>(createdComment, HttpStatus.CREATED);
+	}
+	
+	
+	@PutMapping("comments/{commentId}")
+	public ResponseEntity<CommentDto> updateComment(@RequestBody CommentDto commentDto, @PathVariable Long commentId) {
+		CommentDto updatedComment = this.commentService.updateComment(commentDto, commentId);
+		return new ResponseEntity<>(updatedComment, HttpStatus.OK);
 	}
 
 	@DeleteMapping("comments/{commentId}")
-	public ResponseEntity<String> deleteComment(@PathVariable Integer commentId) {
+	public ResponseEntity<String> deleteComment(@PathVariable Long commentId) {
 		this.commentService.deleteComment(commentId);
 		return new ResponseEntity<>("Comment deleted successfully", HttpStatus.OK);
 	}

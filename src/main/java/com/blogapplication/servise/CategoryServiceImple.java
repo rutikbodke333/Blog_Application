@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.blogapplication.entity.Category;
-import com.blogapplication.exception.CategoryNotFoundException;
+
 import com.blogapplication.payload.CategoryDto;
 import com.blogapplication.payload.UserDto;
 import com.blogapplication.repository.CategoryRepo;
@@ -23,10 +23,32 @@ public class CategoryServiceImple implements CategoryService {
 	public CategoryRepo categoryRepo;
 
 	@Override
-	public CategoryDto upsertCategory(CategoryDto categoryDto) {
-		Category categoy = categoryDtoToCategory(categoryDto);
-		Category savedCategory = categoryRepo.save(categoy);
-		return categoryToCategoryDto(savedCategory);
+	public CategoryDto createCategory(CategoryDto categoryDto) {
+		
+
+		Category category = modelMapper.map(categoryDto, Category.class);
+		
+
+		Category savedCategory = categoryRepo.save(category);
+		
+		
+		return modelMapper.map(savedCategory, CategoryDto.class);
+		
+		
+
+	}
+	
+	@Override
+	public CategoryDto updateCategory(CategoryDto categoryDto, Long categoryId) {
+		Category category = categoryRepo.findById(categoryId)
+				.orElseThrow(() -> new RuntimeException("category not found with id: " + categoryId));
+		
+		category.setCategoryTitle(categoryDto.getCategoryTitle());
+		category.setCategoryDescription(categoryDto.getCategoryDescription());
+		
+		Category updatedCategory = categoryRepo.save(category);
+		
+		return modelMapper.map(updatedCategory, CategoryDto.class);
 	}
 
 	@Override
@@ -38,30 +60,19 @@ public class CategoryServiceImple implements CategoryService {
 	}
 
 	@Override
-	public CategoryDto getCategorybyId(Integer id) {
-		Category category = categoryRepo.findById(id).orElseThrow(  () -> new CategoryNotFoundException("category id is not exist"));
-		return categoryToCategoryDto(category);
+	public CategoryDto getCategorybyId(Long categoryId) {
+		Category category = categoryRepo.findById(categoryId).orElseThrow(  () -> new RuntimeException("category not found with id: " + categoryId));
+		return modelMapper.map(category, CategoryDto.class);
 	}
 
 	@Override
-	public void deleteById(Integer id) {
-		categoryRepo.deleteById(id);
+	public void deleteById(Long categoryId) {
+		categoryRepo.deleteById(categoryId);
 
 	}
 
-	public Category categoryDtoToCategory(CategoryDto categoryDto) {
 
-		Category category = modelMapper.map(categoryDto, Category.class);
 
-		return category;
-
-	}
-
-	public CategoryDto  categoryToCategoryDto (Category category) {
-
-		CategoryDto categoryDto = modelMapper.map(category, CategoryDto.class);
-
-		return categoryDto;
-	}
+	
 
 }

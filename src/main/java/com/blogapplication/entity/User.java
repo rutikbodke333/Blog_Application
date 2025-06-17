@@ -32,7 +32,7 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private Long id;
 
 	@Column(name = "user_name")
 	private String name;
@@ -41,12 +41,12 @@ public class User {
 
 	private String password;
 
-	private String about;
+
 	
 	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Post> post = new ArrayList<>();
 	
-	private String role;
+	private String role; // ROLE_USER, ROLE_ADMIN
 	
     
 	

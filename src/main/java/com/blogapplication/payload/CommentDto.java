@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CommentDto {
 	
-	private int id;
+	private Long id;
 	
 	@NotBlank(message = "content cannot be blank")
 	@Size(min = 5, max = 500, message = "content must be between 5 and 500 characters")

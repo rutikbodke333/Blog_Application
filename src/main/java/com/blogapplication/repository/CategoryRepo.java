@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.blogapplication.entity.Category;
 
 @Repository
-public interface CategoryRepo  extends JpaRepository<Category, Integer> {
+public interface CategoryRepo  extends JpaRepository<Category, Long> {
 	
 
 }
