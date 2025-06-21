@@ -163,6 +163,7 @@ The system supports two main user roles:
 
 ---
 
+
 #### 5️⃣ _**Get All Users (Admin)**_
 - **📌 Endpoint:** `GET /engineeringstudy/user/allUsers`
 - **🛠️ Functionality:**  fetch all registered users.
@@ -198,86 +199,128 @@ The system supports two main user roles:
   ![Delete User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Delete%20User.png?raw=true)
 
 ---
-
-#### 9️⃣ _**Create Announcement (Admin)**_
-- **📌 Endpoint:** `POST /engineeringstudy/admin/announcements`
-- **🛠️ Functionality:**  create a new announcement.
+#### 5️⃣ _**create category**_
+- **📌 Endpoint:** `GET /engineeringstudy/user/allUsers`
+- **🛠️ Functionality:**  fetch all registered users.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Create Announcement](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Add%20announcemnt.png?raw=true)
+  ![Get All Users](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20All%20Users.png?raw=true)
 
 ---
 
-#### 🔟 _**Get All Announcements**_
-- **📌 Endpoint:** `GET /engineeringstudy/announcements`
-- **🛠️ Functionality:** Returns all announcements visible to users.
+#### 5️⃣ _**find All category**_
+- **📌 Endpoint:** `GET /engineeringstudy/user/allUsers`
+- **🛠️ Functionality:**  fetch all registered users.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Get All Announcements](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20all%20announcemnt.png?raw=true)
+  ![Get All Users](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20All%20Users.png?raw=true)
 
 ---
 
-#### 1️⃣1️⃣ _**Get Announcement by ID**_
-- **📌 Endpoint:** `GET /engineeringstudy/admin/announcements/{announcementId}`
-- **🛠️ Functionality:** Fetch specific announcement by ID.
+### 6️⃣ _**Update category**_
+- **📌 Endpoint:** `PUT /engineeringstudy/user/{id}`
+- **🛠️ Functionality:** update user details by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Get Announcement by ID](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/get%20announcemnt%20by%20id.png?raw=true)
+  ![Update User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Update%20user.png?raw=true)
 
 ---
 
-#### 1️⃣2️⃣ _**Update Announcement by ID**_
-- **📌 Endpoint:** `PUT /engineeringstudy/admin/announcements/{announcementId}`
-- **🛠️ Functionality:** Admin updates announcement details by ID.
+### 7️⃣ _**Get category by categoryId**_
+- **📌 Endpoint:** `GET /engineeringstudy/user/{id}`
+- **🛠️ Functionality:** Fetch user data by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Update Announcement](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/update%20announcement%20by%20announcementId.png?raw=true)
+  ![Get User by ID](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20the%20user%20by%20userId.png?raw=true)
 
 ---
 
-#### 1️⃣3️⃣ _**Upload PDF (User)**_
-- **📌 Endpoint:** `POST engineeringstudy/user/documents/upload/1?documentType=PDF&branch=Computer%20Engineering&semester=6&academicYear=2023-24&department=Engineering`
-- **🛠️ Functionality:** Upload a document with metadata.
+#### 8️⃣ _**Delete category **_
+- **📌 Endpoint:** `DELETE /engineeringstudy/user/{id}`
+- **🛠️ Functionality:**  delete user by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Upload PDF](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/upload%20new%20document.png?raw=true)
+  ![Delete User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Delete%20User.png?raw=true)
 
 ---
 
-#### 1️⃣4️⃣ _**Get All Documents**_
-- **📌 Endpoint:** `GET /engineeringstudy/user/documents`
-- **🛠️ Functionality:** Fetch all uploaded documents.
+#### 5️⃣ _**create post**_
+- **📌 Endpoint:** `GET /engineeringstudy/user/allUsers`
+- **🛠️ Functionality:**  fetch all registered users.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Get All Documents](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/get%20all%20documents.png?raw=true)
+  ![Get All Users](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20All%20Users.png?raw=true)
 
 ---
 
-#### 1️⃣5️⃣ _**Get Document by ID**_
-- **📌 Endpoint:** `GET /engineeringstudy/user/documents/{id}`
-- **🛠️ Functionality:** Fetch document details by ID.
+### 6️⃣ _**Update post**_
+- **📌 Endpoint:** `PUT /engineeringstudy/user/{id}`
+- **🛠️ Functionality:** update user details by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Get Document by ID](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/get%20document%20by%20id.png?raw=true)
+  ![Update User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Update%20user.png?raw=true)
 
 ---
 
-#### 1️⃣6️⃣ _**Delete Document by ID**_
-- **📌 Endpoint:** `DELETE /engineeringstudy/user/documents/{id}`
-- **🛠️ Functionality:** Delete document by ID.
+### 7️⃣ _**Get post by postId**_
+- **📌 Endpoint:** `GET /engineeringstudy/user/{id}`
+- **🛠️ Functionality:** Fetch user data by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Delete Document](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/delete%20the%20document%20based%20id.png?raw=true)
+  ![Get User by ID](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20the%20user%20by%20userId.png?raw=true)
 
 ---
 
-#### 1️⃣7️⃣ _**Convert Percentage to CGPA (User)**_
-- **📌 Endpoint:** `GET /engineeringstudy/user/convert?percentage=85`
-- **🛠️ Functionality:** Returns CGPA equivalent of given percentage.
+### 7️⃣ _**Get All Posts by a Specific User**_
+- **📌 Endpoint:** `GET /engineeringstudy/user/{id}`
+- **🛠️ Functionality:** Fetch user data by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Convert Percentage to CGPA](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/cgpa%20to%20percentage.png?raw=true)
+  ![Get User by ID](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20the%20user%20by%20userId.png?raw=true)
 
 ---
+### 7️⃣ _**Get All Posts by Category**_
+- **📌 Endpoint:** `GET /engineeringstudy/user/{id}`
+- **🛠️ Functionality:** Fetch user data by ID.
+- **🧪 Tested with:** Postman  
+- **🖼️ Screenshot:**  
+  ![Get User by ID](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20the%20user%20by%20userId.png?raw=true)
+
+---
+
+#### 8️⃣ _**Delete post**_
+- **📌 Endpoint:** `DELETE /engineeringstudy/user/{id}`
+- **🛠️ Functionality:**  delete user by ID.
+- **🧪 Tested with:** Postman  
+- **🖼️ Screenshot:**  
+  ![Delete User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Delete%20User.png?raw=true)
+
+---
+#### 4️⃣ _**create comment**_
+- **📌 Endpoint:** `POST /engineeringstudy/auth/login`
+- **🛠️ Functionality:** Authenticates admin and returns a JWT token.
+- **🧪 Tested with:** Postman  
+- **🖼️ Screenshot:**  
+  ![Admin Login](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/admin%20login.png?raw=true)
+
+---
+### 6️⃣ _**Update comment**_
+- **📌 Endpoint:** `PUT /engineeringstudy/user/{id}`
+- **🛠️ Functionality:** update user details by ID.
+- **🧪 Tested with:** Postman  
+- **🖼️ Screenshot:**  
+  ![Update User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Update%20user.png?raw=true)
+
+---
+
+#### 8️⃣ _**Delete comment**_
+- **📌 Endpoint:** `DELETE /engineeringstudy/user/{id}`
+- **🛠️ Functionality:**  delete user by ID.
+- **🧪 Tested with:** Postman  
+- **🖼️ Screenshot:**  
+  ![Delete User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Delete%20User.png?raw=true)
+
+---
+
 
 
