@@ -21,9 +21,9 @@ To solve this problem, I developed the Blog Application—a simple and powerful 
 
 
 ---
-# 📊 Entity Overview – Blog Application
+## 📊 Entity Overview – Blog Application
 
-## 👤 Users
+### 👤 Users
 
 Represents individuals using the blog platform (authors or admins).
 
@@ -36,7 +36,7 @@ Represents individuals using the blog platform (authors or admins).
 
 ---
 
-## 📝 Posts
+### 📝 Posts
 
 Contains blog articles created by users.
 
@@ -51,7 +51,7 @@ Contains blog articles created by users.
 
 ---
 
-## 🗂️ Categories
+### 🗂️ Categories
 
 Groups posts under specific topics or themes.
 
@@ -62,7 +62,7 @@ Groups posts under specific topics or themes.
 
 ---
 
-## 💬 Comments
+### 💬 Comments
 
 Captures user feedback or interaction on posts.
 
@@ -125,202 +125,237 @@ The system supports two main user roles:
 
 ## 📡 API Endpoints
 
+# 📡 API Endpoints – Engineering Study Application
+
 ---
 
-#### 1️⃣ _**Register User**_
+## 🔐 Authentication & Users
+
+### 1️⃣ _**Register User**_
 - **📌 Endpoint:** `POST /engineeringstudy/auth/register`
-- **🛠️ Functionality:** Accepts user details and registers a normal user.
+- **🛠️ Functionality:** Registers a normal user.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Register User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/create%20new%20user.png?raw=true)
+  ![Register User](https://github.com/rutikbodke333/Blog_Application/blob/main/images/register%20user.png?raw=true)
 
 ---
 
-#### 2️⃣ _**Login User**_
+### 2️⃣ _**Login User**_
 - **📌 Endpoint:** `POST /engineeringstudy/auth/login`
 - **🛠️ Functionality:** Authenticates user and returns a JWT token.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Login User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/user%20login.png?raw=true)
+  ![Login User](https://github.com/rutikbodke333/Blog_Application/blob/main/images/login%20user.png?raw=true)
 
 ---
 
-#### 3️⃣ _**Create User Profile (Admin)**_
+### 3️⃣ _**Create User Profile (Admin)**_
 - **📌 Endpoint:** `POST /engineeringstudy/admin/users`
-- **🛠️ Functionality:** Allows admin to create  accounts with admin role.
+- **🛠️ Functionality:** Creates an account with admin role.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Create User Admin](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/create%20new%20admin.png?raw=true)
+  ![Create Admin](https://github.com/rutikbodke333/Blog_Application/blob/main/images/register%20admin.png?raw=true)
 
 ---
 
-#### 4️⃣ _**Admin Login**_
+### 4️⃣ _**Admin Login**_
 - **📌 Endpoint:** `POST /engineeringstudy/auth/login`
 - **🛠️ Functionality:** Authenticates admin and returns a JWT token.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Admin Login](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/admin%20login.png?raw=true)
+  ![Admin Login](https://github.com/rutikbodke333/Blog_Application/blob/main/images/Admin%20login.png?raw=true)
 
 ---
 
-
-#### 5️⃣ _**Get All Users (Admin)**_
+### 5️⃣ _**Find All Users (Admin)**_
 - **📌 Endpoint:** `GET /engineeringstudy/user/allUsers`
-- **🛠️ Functionality:**  fetch all registered users.
+- **🛠️ Functionality:** Fetch all registered users.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Get All Users](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20All%20Users.png?raw=true)
+  ![All Users](https://github.com/rutikbodke333/Blog_Application/blob/main/images/fetch%20all%20users.png?raw=true)
 
 ---
 
 ### 6️⃣ _**Update User (Admin/User)**_
 - **📌 Endpoint:** `PUT /engineeringstudy/user/{id}`
-- **🛠️ Functionality:** update user details by ID.
+- **🛠️ Functionality:** Update user details by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Update User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Update%20user.png?raw=true)
+  ![Update User](https://github.com/rutikbodke333/Blog_Application/blob/main/images/update%20user.png?raw=true)
 
 ---
 
-### 7️⃣ _**Get User by ID**_
+### 7️⃣ _**Find User by ID**_
 - **📌 Endpoint:** `GET /engineeringstudy/user/{id}`
 - **🛠️ Functionality:** Fetch user data by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Get User by ID](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20the%20user%20by%20userId.png?raw=true)
+  ![User by ID](https://github.com/rutikbodke333/Blog_Application/blob/main/images/Find%20User%20by%20userId.png?raw=true)
 
 ---
 
-#### 8️⃣ _**Delete User by ID**_
+### 8️⃣ _**Delete User**_
 - **📌 Endpoint:** `DELETE /engineeringstudy/user/{id}`
-- **🛠️ Functionality:**  delete user by ID.
+- **🛠️ Functionality:** Delete user by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Delete User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Delete%20User.png?raw=true)
-
----
-#### 5️⃣ _**create category**_
-- **📌 Endpoint:** `GET /engineeringstudy/user/allUsers`
-- **🛠️ Functionality:**  fetch all registered users.
-- **🧪 Tested with:** Postman  
-- **🖼️ Screenshot:**  
-  ![Get All Users](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20All%20Users.png?raw=true)
+  ![Delete User](https://github.com/rutikbodke333/Blog_Application/blob/main/images/Delete%20User.png?raw=true)
 
 ---
 
-#### 5️⃣ _**find All category**_
-- **📌 Endpoint:** `GET /engineeringstudy/user/allUsers`
-- **🛠️ Functionality:**  fetch all registered users.
+## 🗂️ Categories
+
+### 9️⃣ _**Create Category**_
+- **📌 Endpoint:** `POST /engineeringstudy/category/`
+- **🛠️ Functionality:** Create a new category.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Get All Users](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20All%20Users.png?raw=true)
+  ![Create Category](https://github.com/rutikbodke333/Blog_Application/blob/main/images/add%20category.png?raw=true)
 
 ---
 
-### 6️⃣ _**Update category**_
-- **📌 Endpoint:** `PUT /engineeringstudy/user/{id}`
-- **🛠️ Functionality:** update user details by ID.
+### 🔟 _**Find All Categories**_
+- **📌 Endpoint:** `GET /engineeringstudy/category/`
+- **🛠️ Functionality:** Fetch all categories.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Update User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Update%20user.png?raw=true)
+  ![All Categories](https://github.com/rutikbodke333/Blog_Application/blob/main/images/find%20all%20categories.png?raw=true)
 
 ---
 
-### 7️⃣ _**Get category by categoryId**_
-- **📌 Endpoint:** `GET /engineeringstudy/user/{id}`
-- **🛠️ Functionality:** Fetch user data by ID.
+### 1️⃣1️⃣ _**Update Category**_
+- **📌 Endpoint:** `PUT /engineeringstudy/category/{id}`
+- **🛠️ Functionality:** Update category by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Get User by ID](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20the%20user%20by%20userId.png?raw=true)
+  ![Update Category](https://github.com/rutikbodke333/Blog_Application/blob/main/images/update%20category.png?raw=true)
 
 ---
 
-#### 8️⃣ _**Delete category **_
-- **📌 Endpoint:** `DELETE /engineeringstudy/user/{id}`
-- **🛠️ Functionality:**  delete user by ID.
+### 1️⃣2️⃣ _**Get Category by ID**_
+- **📌 Endpoint:** `GET /engineeringstudy/category/{id}`
+- **🛠️ Functionality:** Fetch category by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Delete User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Delete%20User.png?raw=true)
+  ![Category by ID](https://github.com/rutikbodke333/Blog_Application/blob/main/images/find%20category%20by%20CategoryId.png?raw=true)
 
 ---
 
-#### 5️⃣ _**create post**_
-- **📌 Endpoint:** `GET /engineeringstudy/user/allUsers`
-- **🛠️ Functionality:**  fetch all registered users.
+### 1️⃣3️⃣ _**Delete Category**_
+- **📌 Endpoint:** `DELETE /engineeringstudy/category/{id}`
+- **🛠️ Functionality:** Delete category by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Get All Users](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20All%20Users.png?raw=true)
+  ![Delete Category](https://github.com/rutikbodke333/Blog_Application/blob/main/images/Delete%20Category.png?raw=true)
 
 ---
 
-### 6️⃣ _**Update post**_
-- **📌 Endpoint:** `PUT /engineeringstudy/user/{id}`
-- **🛠️ Functionality:** update user details by ID.
+## 📝 Posts
+
+### 1️⃣4️⃣ _**Create Post**_
+- **📌 Endpoint:** `POST /engineeringstudy/posts/`
+- **🛠️ Functionality:** Create a new blog post.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Update User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Update%20user.png?raw=true)
+  ![Create Post](https://github.com/rutikbodke333/Blog_Application/blob/main/images/create%20post.png?raw=true)
 
 ---
 
-### 7️⃣ _**Get post by postId**_
-- **📌 Endpoint:** `GET /engineeringstudy/user/{id}`
-- **🛠️ Functionality:** Fetch user data by ID.
+### 1️⃣5️⃣ _**Update Post**_
+- **📌 Endpoint:** `PUT /engineeringstudy/posts/{id}`
+- **🛠️ Functionality:** Update a blog post.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Get User by ID](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20the%20user%20by%20userId.png?raw=true)
+  ![Update Post](https://github.com/rutikbodke333/Blog_Application/blob/main/images/update%20post.png?raw=true)
 
 ---
 
-### 7️⃣ _**Get All Posts by a Specific User**_
-- **📌 Endpoint:** `GET /engineeringstudy/user/{id}`
-- **🛠️ Functionality:** Fetch user data by ID.
+### 1️⃣6️⃣ _**Find All Posts**_
+- **📌 Endpoint:** `GET /engineeringstudy/posts/`
+- **🛠️ Functionality:** Fetch all blog posts.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Get User by ID](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20the%20user%20by%20userId.png?raw=true)
-
----
-### 7️⃣ _**Get All Posts by Category**_
-- **📌 Endpoint:** `GET /engineeringstudy/user/{id}`
-- **🛠️ Functionality:** Fetch user data by ID.
-- **🧪 Tested with:** Postman  
-- **🖼️ Screenshot:**  
-  ![Get User by ID](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Get%20the%20user%20by%20userId.png?raw=true)
+  ![All Posts](https://github.com/rutikbodke333/Blog_Application/blob/main/images/fetch%20all%20post.png?raw=true)
 
 ---
 
-#### 8️⃣ _**Delete post**_
-- **📌 Endpoint:** `DELETE /engineeringstudy/user/{id}`
-- **🛠️ Functionality:**  delete user by ID.
+### 1️⃣7️⃣ _**Find Post by ID**_
+- **📌 Endpoint:** `GET /engineeringstudy/posts/{id}`
+- **🛠️ Functionality:** Fetch post by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Delete User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Delete%20User.png?raw=true)
-
----
-#### 4️⃣ _**create comment**_
-- **📌 Endpoint:** `POST /engineeringstudy/auth/login`
-- **🛠️ Functionality:** Authenticates admin and returns a JWT token.
-- **🧪 Tested with:** Postman  
-- **🖼️ Screenshot:**  
-  ![Admin Login](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/admin%20login.png?raw=true)
-
----
-### 6️⃣ _**Update comment**_
-- **📌 Endpoint:** `PUT /engineeringstudy/user/{id}`
-- **🛠️ Functionality:** update user details by ID.
-- **🧪 Tested with:** Postman  
-- **🖼️ Screenshot:**  
-  ![Update User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Update%20user.png?raw=true)
+  ![Post by ID](https://github.com/rutikbodke333/Blog_Application/blob/main/images/find%20post%20by%20postId.png?raw=true)
 
 ---
 
-#### 8️⃣ _**Delete comment**_
-- **📌 Endpoint:** `DELETE /engineeringstudy/user/{id}`
-- **🛠️ Functionality:**  delete user by ID.
+### 1️⃣8️⃣ _**Get All Posts by a Specific User**_
+- **📌 Endpoint:** `GET /engineeringstudy/posts/user/{userId}`
+- **🛠️ Functionality:** Fetch posts created by a specific user.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Delete User](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/Delete%20User.png?raw=true)
+  ![Posts by User](https://github.com/rutikbodke333/Blog_Application/blob/main/images/Get%20All%20Posts%20by%20a%20Specific%20User.png?raw=true)
 
 ---
 
+### 1️⃣9️⃣ _**Get All Posts by Category**_
+- **📌 Endpoint:** `GET /engineeringstudy/posts/category/{categoryId}`
+- **🛠️ Functionality:** Fetch all posts in a specific category.
+- **🧪 Tested with:** Postman  
+- **🖼️ Screenshot:**  
+  ![Posts by Category](https://github.com/rutikbodke333/Blog_Application/blob/main/images/Get%20All%20Posts%20by%20Category.png?raw=true)
 
+---
 
+### 2️⃣0️⃣ _**Delete Post**_
+- **📌 Endpoint:** `DELETE /engineeringstudy/posts/{id}`
+- **🛠️ Functionality:** Delete a blog post.
+- **🧪 Tested with:** Postman  
+- **🖼️ Screenshot:**  
+  ![Delete Post](https://github.com/rutikbodke333/Blog_Application/blob/main/images/delete%20the%20post.png?raw=true)
+
+---
+
+## 💬 Comments
+
+### 2️⃣1️⃣ _**Create Comment**_
+- **📌 Endpoint:** `POST /engineeringstudy/comments/`
+- **🛠️ Functionality:** Create a new comment on a post.
+- **🧪 Tested with:** Postman  
+- **🖼️ Screenshot:**  
+  ![Create Comment](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/admin%20login.png?raw=true)
+
+---
+
+### 2️⃣2️⃣ _**Update Comment**_
+- **📌 Endpoint:** `PUT /engineeringstudy/comments/{id}`
+- **🛠️ Functionality:** Update a comment.
+- **🧪 Tested with:** Postman  
+- **🖼️ Screenshot:**  
+  ![Update Comment](https://github.com/rutikbodke333/Blog_Application/blob/main/images/update%20comment.png?raw=true)
+
+---
+
+### 2️⃣3️⃣ _**Fetch All Comments**_
+- **📌 Endpoint:** `GET /engineeringstudy/comments/`
+- **🛠️ Functionality:** Retrieve all comments.
+- **🧪 Tested with:** Postman  
+- **🖼️ Screenshot:**  
+  ![All Comments](https://github.com/rutikbodke333/Blog_Application/blob/main/images/Get%20All%20Comments.png?raw=true)
+
+---
+
+### 2️⃣4️⃣ _**Find Comment by Comment ID**_
+- **📌 Endpoint:** `GET /engineeringstudy/comments/{id}`
+- **🛠️ Functionality:** Fetch comment by ID.
+- **🧪 Tested with:** Postman  
+- **🖼️ Screenshot:**  
+  ![Comment by ID](https://github.com/rutikbodke333/Blog_Application/blob/main/images/Get%20Comment%20by%20commentId.png?raw=true)
+
+---
+
+### 2️⃣5️⃣ _**Delete Comment**_
+- **📌 Endpoint:** `DELETE /engineeringstudy/comments/{id}`
+- **🛠️ Functionality:** Delete comment by ID.
+- **🧪 Tested with:** Postman  
+- **🖼️ Screenshot:**  
+  ![Delete Comment](https://github.com/rutikbodke333/Blog_Application/blob/main/images/delete%20the%20post.png?raw=true)
