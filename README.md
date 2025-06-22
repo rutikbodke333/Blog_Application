@@ -318,7 +318,7 @@ The system supports two main user roles:
 - **🛠️ Functionality:** Create a new comment on a post.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Create Comment](https://github.com/rutikbodke333/Engineering_Study_Application/blob/main/images/admin%20login.png?raw=true)
+  ![Create Comment](https://github.com/rutikbodke333/Blog_Application/blob/main/images/create%20comment.png?raw=true)
 
 ---
 
@@ -354,4 +354,4 @@ The system supports two main user roles:
 - **🛠️ Functionality:** Delete comment by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![Delete Comment](https://github.com/rutikbodke333/Blog_Application/blob/main/images/delete%20the%20post.png?raw=true)
+  ![Delete Comment](https://github.com/rutikbodke333/Blog_Application/blob/main/images/delete%20comment.png?raw=true)
