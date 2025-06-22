@@ -202,7 +202,7 @@ The system supports two main user roles:
 ## 🗂️ Categories
 
 ### 9️⃣ _**Create Category**_
-- **📌 Endpoint:** `POST /engineeringstudy/category/`
+- **📌 Endpoint:** `POST /engineeringstudy/user/category`
 - **🛠️ Functionality:** Create a new category.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
@@ -211,7 +211,7 @@ The system supports two main user roles:
 ---
 
 ### 🔟 _**Find All Categories**_
-- **📌 Endpoint:** `GET /engineeringstudy/category/`
+- **📌 Endpoint:** `GET /engineeringstudy/user/category`
 - **🛠️ Functionality:** Fetch all categories.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
@@ -220,7 +220,7 @@ The system supports two main user roles:
 ---
 
 ### 1️⃣1️⃣ _**Update Category**_
-- **📌 Endpoint:** `PUT /engineeringstudy/category/{id}`
+- **📌 Endpoint:** `PUT /engineeringstudy/user/category/{id}`
 - **🛠️ Functionality:** Update category by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
@@ -229,7 +229,7 @@ The system supports two main user roles:
 ---
 
 ### 1️⃣2️⃣ _**find Category by categoryId**_
-- **📌 Endpoint:** `GET /engineeringstudy/category/{id}`
+- **📌 Endpoint:** `GET /engineeringstudy/user/category/{id}`
 - **🛠️ Functionality:** Fetch category by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
@@ -238,7 +238,7 @@ The system supports two main user roles:
 ---
 
 ### 1️⃣3️⃣ _**Delete Category**_
-- **📌 Endpoint:** `DELETE /engineeringstudy/category/{id}`
+- **📌 Endpoint:** `DELETE /engineeringstudy/user/category/{id}`
 - **🛠️ Functionality:** Delete category by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
@@ -249,7 +249,7 @@ The system supports two main user roles:
 ## 📝 Posts
 
 ### 1️⃣4️⃣ _**Create Post**_
-- **📌 Endpoint:** `POST /engineeringstudy/posts/`
+- **📌 Endpoint:** `POST /engineeringstudy/posts`
 - **🛠️ Functionality:** Create a new blog post.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
@@ -267,7 +267,7 @@ The system supports two main user roles:
 ---
 
 ### 1️⃣6️⃣ _**Find All Posts**_
-- **📌 Endpoint:** `GET /engineeringstudy/posts/`
+- **📌 Endpoint:** `GET /engineeringstudy/posts`
 - **🛠️ Functionality:** Fetch all blog posts.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
@@ -314,7 +314,7 @@ The system supports two main user roles:
 ## 💬 Comments
 
 ### 2️⃣1️⃣ _**Create Comment**_
-- **📌 Endpoint:** `POST /engineeringstudy/comments/`
+- **📌 Endpoint:** `POST /engineeringstudy/user/posts/postId/comments`
 - **🛠️ Functionality:** Create a new comment on a post.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
@@ -323,7 +323,7 @@ The system supports two main user roles:
 ---
 
 ### 2️⃣2️⃣ _**Update Comment**_
-- **📌 Endpoint:** `PUT /engineeringstudy/comments/{id}`
+- **📌 Endpoint:** `PUT /engineeringstudy/user/comments/{id}`
 - **🛠️ Functionality:** Update a comment.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
@@ -332,7 +332,7 @@ The system supports two main user roles:
 ---
 
 ### 2️⃣3️⃣ _**Fetch All Comments**_
-- **📌 Endpoint:** `GET /engineeringstudy/comments/`
+- **📌 Endpoint:** `GET /engineeringstudy/user/comments`
 - **🛠️ Functionality:** Retrieve all comments.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
@@ -341,7 +341,7 @@ The system supports two main user roles:
 ---
 
 ### 2️⃣4️⃣ _**Find Comment by Comment ID**_
-- **📌 Endpoint:** `GET /engineeringstudy/comments/{id}`
+- **📌 Endpoint:** `GET /engineeringstudy/user/comments/{id}`
 - **🛠️ Functionality:** Fetch comment by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
@@ -350,7 +350,7 @@ The system supports two main user roles:
 ---
 
 ### 2️⃣5️⃣ _**Delete Comment**_
-- **📌 Endpoint:** `DELETE /engineeringstudy/comments/{id}`
+- **📌 Endpoint:** `DELETE /engineeringstudy/user/comments/{id}`
 - **🛠️ Functionality:** Delete comment by ID.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
