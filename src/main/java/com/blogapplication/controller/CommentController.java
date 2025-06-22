@@ -1,9 +1,12 @@
 package com.blogapplication.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -25,6 +28,18 @@ public class CommentController {
 	public ResponseEntity<CommentDto> createComment(@RequestBody CommentDto commentDto, @PathVariable Long postId) {
 		CommentDto createdComment = this.commentService.createComment(commentDto, postId);
 		return new ResponseEntity<>(createdComment, HttpStatus.CREATED);
+	}
+	
+	@GetMapping("comments/{commentId}")
+	public ResponseEntity<CommentDto> getCommentById(@PathVariable Long commentId) {
+		CommentDto commentDto = this.commentService.getCommentById(commentId);
+		return new ResponseEntity<>(commentDto, HttpStatus.OK);
+	}
+	
+	@GetMapping("comments")
+	public ResponseEntity<List<CommentDto>> getAllComments() {
+		List<CommentDto> comments = this.commentService.getAllComments();
+		return new ResponseEntity<>(comments, HttpStatus.OK);
 	}
 	
 	

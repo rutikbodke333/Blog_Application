@@ -70,14 +70,13 @@ public class PostServiceImple implements PostService {
 
 	@Override
 	public PostDto updatePost(PostDto postDto, Long postId) {
-		Post post = this.postRespo.findById(postId)
-				.orElseThrow(() -> new RuntimeException("Post id is not exist"));
+		Post post = this.postRespo.findById(postId).orElseThrow(() -> new RuntimeException("Post id is not exist"));
 
 		post.setTitle(postDto.getTitle());
 		post.setContent(postDto.getContent());
 		post.setImageName(postDto.getImageName());
 		post.setAddedDate(new Date());
-		
+
 		Post updatedPost = this.postRespo.save(post);
 
 		return this.modelMapper.map(updatedPost, PostDto.class);
@@ -163,8 +162,7 @@ public class PostServiceImple implements PostService {
 
 	@Override
 	public PostDto getPostById(Long postId) {
-		Post post = this.postRespo.findById(postId)
-				.orElseThrow(() -> new RuntimeException("Post id is not exist"));
+		Post post = this.postRespo.findById(postId).orElseThrow(() -> new RuntimeException("Post id is not exist"));
 
 		return this.modelMapper.map(post, PostDto.class);
 
@@ -172,10 +170,9 @@ public class PostServiceImple implements PostService {
 
 	@Override
 	public void deletePost(Long postId) {
-		Post post = this.postRespo.findById(postId)
-				.orElseThrow(() -> new RuntimeException("Post id is not exist"));
+		postRespo.findById(postId).orElseThrow(() -> new RuntimeException("Post id is not exist"));
 
-		this.postRespo.delete(post);
+		this.postRespo.deleteById(postId);
 
 	}
 

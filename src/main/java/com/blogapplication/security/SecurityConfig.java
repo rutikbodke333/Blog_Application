@@ -42,7 +42,7 @@ public class SecurityConfig {
                 .requestMatchers(
                     "/blogapplication/auth/login",
                     "/blogapplication/auth/register",
-                    "/blogapplication/admin/users" // allow creation or update of admin profile without authentication
+                    "/blogapplication/admin/register" // allow creation or update of admin profile without authentication
                 ).permitAll()
 
                 //  Protected endpoints

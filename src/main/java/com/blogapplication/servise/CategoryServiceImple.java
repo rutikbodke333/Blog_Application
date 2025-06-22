@@ -18,36 +18,31 @@ public class CategoryServiceImple implements CategoryService {
 
 	@Autowired
 	public ModelMapper modelMapper;
-	
+
 	@Autowired
 	public CategoryRepo categoryRepo;
 
 	@Override
 	public CategoryDto createCategory(CategoryDto categoryDto) {
-		
 
 		Category category = modelMapper.map(categoryDto, Category.class);
-		
 
 		Category savedCategory = categoryRepo.save(category);
-		
-		
+
 		return modelMapper.map(savedCategory, CategoryDto.class);
-		
-		
 
 	}
-	
+
 	@Override
 	public CategoryDto updateCategory(CategoryDto categoryDto, Long categoryId) {
 		Category category = categoryRepo.findById(categoryId)
 				.orElseThrow(() -> new RuntimeException("category not found with id: " + categoryId));
-		
+
 		category.setCategoryTitle(categoryDto.getCategoryTitle());
 		category.setCategoryDescription(categoryDto.getCategoryDescription());
-		
+
 		Category updatedCategory = categoryRepo.save(category);
-		
+
 		return modelMapper.map(updatedCategory, CategoryDto.class);
 	}
 
@@ -61,18 +56,19 @@ public class CategoryServiceImple implements CategoryService {
 
 	@Override
 	public CategoryDto getCategorybyId(Long categoryId) {
-		Category category = categoryRepo.findById(categoryId).orElseThrow(  () -> new RuntimeException("category not found with id: " + categoryId));
+		Category category = categoryRepo.findById(categoryId)
+				.orElseThrow(() -> new RuntimeException("category not found with id: " + categoryId));
 		return modelMapper.map(category, CategoryDto.class);
 	}
 
 	@Override
 	public void deleteById(Long categoryId) {
+
+		categoryRepo.findById(categoryId)
+				.orElseThrow(() -> new RuntimeException("category not found with id: " + categoryId));
+
 		categoryRepo.deleteById(categoryId);
 
 	}
-
-
-
-	
 
 }

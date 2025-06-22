@@ -1,5 +1,7 @@
 package com.blogapplication.servise;
 
+import java.util.List;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,16 +40,14 @@ public class CommentServiceImple implements CommentService {
 	@Override
 	public CommentDto updateComment(CommentDto commentDto, Long commentId) {
 
-	    
-	    Comment comment = this.commentRepo.findById(commentId)
-	            .orElseThrow(() -> new RuntimeException("Comment not found with id: " + commentId));
+		Comment comment = this.commentRepo.findById(commentId)
+				.orElseThrow(() -> new RuntimeException("Comment not found with id: " + commentId));
 
-	    comment.setContent(commentDto.getContent());
-	   
+		comment.setContent(commentDto.getContent());
 
-	    Comment updatedComment = this.commentRepo.save(comment);
+		Comment updatedComment = this.commentRepo.save(comment);
 
-	    return this.modelMapper.map(updatedComment, CommentDto.class);
+		return this.modelMapper.map(updatedComment, CommentDto.class);
 	}
 
 	@Override
@@ -57,6 +57,22 @@ public class CommentServiceImple implements CommentService {
 
 		this.commentRepo.delete(comment);
 
+	}
+
+	@Override
+	public CommentDto getCommentById(Long commentId) {
+		Comment comment = this.commentRepo.findById(commentId)
+				.orElseThrow(() -> new RuntimeException("Comment not found with id: " + commentId));
+		return this.modelMapper.map(comment, CommentDto.class);
+	}
+
+	@Override
+	public List<CommentDto> getAllComments() {
+		List<Comment> comments = this.commentRepo.findAll();
+		 List<CommentDto> commentDtos = comments.stream()
+				.map(comment -> this.modelMapper.map(comment, CommentDto.class))
+				.toList();
+		 return commentDtos;
 	}
 
 }
