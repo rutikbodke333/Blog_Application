@@ -145,7 +145,7 @@ The system supports two main user roles:
 
 ---
 
-### 3️⃣ _**Create User Profile (Admin)**_
+### 3️⃣ _**Create Admin Profile **_
 - **📌 Endpoint:** `POST /engineeringstudy/admin/users`
 - **🛠️ Functionality:** Creates an account with admin role.
 - **🧪 Tested with:** Postman  
