@@ -145,7 +145,7 @@ The system supports two main user roles:
 
 ---
 
-### 3️⃣ _**Create Admin Profile **_
+### 3️⃣ _**Create Admin Profile**_
 - **📌 Endpoint:** `POST /engineeringstudy/admin/users`
 - **🛠️ Functionality:** Creates an account with admin role.
 - **🧪 Tested with:** Postman  
@@ -163,7 +163,7 @@ The system supports two main user roles:
 
 ---
 
-### 5️⃣ _**Find All Users (Admin)**_
+### 5️⃣ _**Find All Users**_
 - **📌 Endpoint:** `GET /engineeringstudy/user/allUsers`
 - **🛠️ Functionality:** Fetch all registered users.
 - **🧪 Tested with:** Postman  
@@ -172,7 +172,7 @@ The system supports two main user roles:
 
 ---
 
-### 6️⃣ _**Update User (Admin/User)**_
+### 6️⃣ _**Update User**_
 - **📌 Endpoint:** `PUT /engineeringstudy/user/{id}`
 - **🛠️ Functionality:** Update user details by ID.
 - **🧪 Tested with:** Postman  
@@ -181,7 +181,7 @@ The system supports two main user roles:
 
 ---
 
-### 7️⃣ _**Find User by ID**_
+### 7️⃣ _**Find User by userId**_
 - **📌 Endpoint:** `GET /engineeringstudy/user/{id}`
 - **🛠️ Functionality:** Fetch user data by ID.
 - **🧪 Tested with:** Postman  
@@ -228,7 +228,7 @@ The system supports two main user roles:
 
 ---
 
-### 1️⃣2️⃣ _**Get Category by ID**_
+### 1️⃣2️⃣ _**find Category by categoryId**_
 - **📌 Endpoint:** `GET /engineeringstudy/category/{id}`
 - **🛠️ Functionality:** Fetch category by ID.
 - **🧪 Tested with:** Postman  
@@ -275,7 +275,7 @@ The system supports two main user roles:
 
 ---
 
-### 1️⃣7️⃣ _**Find Post by ID**_
+### 1️⃣7️⃣ _**Find Post by postId**_
 - **📌 Endpoint:** `GET /engineeringstudy/posts/{id}`
 - **🛠️ Functionality:** Fetch post by ID.
 - **🧪 Tested with:** Postman  
