@@ -27,12 +27,11 @@ To solve this problem, I developed the Blog Application—a simple and powerful 
 
 Represents individuals using the blog platform (authors or admins).
 
-- **ID** – Unique identifier for the user  
-- **Name** – Full name of the user  
-- **Email** – User's email address  
-- **Password** – Encrypted password  
-- **Role** – _Either_ `ROLE_USER` _or_ `ROLE_ADMIN`  
-- **Posts** – List of blog posts authored by the user  
+- **ID**   
+- **Name** 
+- **Email** 
+- **Password**  
+- **Role** – `ROLE_USER` _or_ `ROLE_ADMIN`  
 
 ---
 
@@ -40,14 +39,14 @@ Represents individuals using the blog platform (authors or admins).
 
 Contains blog articles created by users.
 
-- **PostID** – Unique identifier for the blog post  
-- **Title** – Title of the post  
-- **Content** – Body/content of the post  
-- **ImageName** – Name of the image file attached to the post  
-- **AddedDate** – Date when the post was created  
-- **User** – _Reference to the user who authored the post_  
-- **Category** – _Reference to the post's category_  
-- **Comments** – List of comments under this post  
+- **PostID** 
+- **Title** 
+- **Content** 
+- **ImageName** 
+- **AddedDate** 
+- **User** –   Reference variable of User entity for mapping
+- **Category** – Reference variable of Category entity for mapping 
+- **Comments** –  List of comments associated with this post  
 
 ---
 
@@ -55,9 +54,9 @@ Contains blog articles created by users.
 
 Groups posts under specific topics or themes.
 
-- **CategoryID** – Unique identifier for the category  
-- **CategoryTitle** – Title or name of the category  
-- **CategoryDescription** – Description of the category  
+- **CategoryID** 
+- **CategoryTitle** 
+- **CategoryDescription**   
 - **Posts** – List of posts associated with this category  
 
 ---
