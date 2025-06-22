@@ -124,7 +124,6 @@ The system supports two main user roles:
 ---
 
 ## 📡 API Endpoints
----
 
 ## 🔐 Authentication & Users
 
