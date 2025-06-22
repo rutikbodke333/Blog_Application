@@ -100,6 +100,7 @@ The system supports two main user roles:
 - **Comment Module** – Allows users to add, edit, or delete comments on blog posts  
 - **Search & Pagination Module** – Enables searching blog posts by keywords and browsing posts with pagination  
 
+---
 
   ## 🛠 Technologies Used
 
@@ -123,9 +124,6 @@ The system supports two main user roles:
 ---
 
 ## 📡 API Endpoints
-
-# 📡 API Endpoints – Engineering Study Application
-
 ---
 
 ## 🔐 Authentication & Users
