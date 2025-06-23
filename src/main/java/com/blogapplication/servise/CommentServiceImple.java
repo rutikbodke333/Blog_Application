@@ -69,10 +69,9 @@ public class CommentServiceImple implements CommentService {
 	@Override
 	public List<CommentDto> getAllComments() {
 		List<Comment> comments = this.commentRepo.findAll();
-		 List<CommentDto> commentDtos = comments.stream()
-				.map(comment -> this.modelMapper.map(comment, CommentDto.class))
+		List<CommentDto> commentDtos = comments.stream().map(comment -> this.modelMapper.map(comment, CommentDto.class))
 				.toList();
-		 return commentDtos;
+		return commentDtos;
 	}
 
 }
