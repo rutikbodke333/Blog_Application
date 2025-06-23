@@ -271,7 +271,7 @@ The system supports two main user roles:
 - **🛠️ Functionality:** Fetch all blog posts.
 - **🧪 Tested with:** Postman  
 - **🖼️ Screenshot:**  
-  ![All Posts](https://github.com/rutikbodke333/Blog_Application/blob/main/images/fetch%20all%20post.png?raw=true)
+  ![All Posts](https://github.com/rutikbodke333/Blog_Application/blob/main/images/find%20All%20Posts.png?raw=true)
 
 ---
 
